@@ -1,5 +1,4 @@
 from graphics import *
-import math
 
 class Renderer:
     def __init__(self, scale):
@@ -11,6 +10,7 @@ class Renderer:
         self.canvas = GraphWin("chip7emu",self.winWidth,self.winHeight)
         self.canvas.setBackground(color_rgb(0,0,0))
         self.display = [0] * self.cols * self.rows
+    
     def setPixel(self, x, y):
         if x > self.cols:
             x -= self.cols
@@ -35,10 +35,14 @@ class Renderer:
             y = (i // self.cols) * self.scale
 
             if self.display[i]:
-                self.canvas    
-                pt = Point(250, 250)
-                pt.setOutline(color_rgb(255,255,255))
-                pt.draw(win)
+                for j in range(self.scale):
+                    for k in range(self.scale):
+                        pt = Point(x+j,x+k)
+                        pt.setOutline(color_rgb(255,255,255))
+                
+    def testRender(self):
+        self.setPixel(0, 0)
+        self.setPixel(5, 2)
 
 
      
