@@ -7,7 +7,7 @@ def main():
     pt = Point(250, 250)
     pt.setOutline(color_rgb(255,255,0))
     pt.draw(win)
-    win.getMouse()
+    # win.getMouse()
     win.close()
 
 main()
